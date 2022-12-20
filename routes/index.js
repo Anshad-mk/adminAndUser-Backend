@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const userController =require('../controllers/userController')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const db=require('../dbConnect/mongoDb')
 
-router.post('/',(req,res)=>{
-  
-})
+
+router.post('/signup',userController.signup)
+
+router.post('/login',userController.login)
+
+
+
 
 module.exports = router;
